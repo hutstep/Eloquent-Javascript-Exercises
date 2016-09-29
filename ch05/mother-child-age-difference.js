@@ -59,7 +59,7 @@ const average = array => {
 
 const motherAgeAtChildbirth = ancestryData => {
   let byName = {}, ages = [];
-  ancestryData.forEach(person => byName[person.name] = person);
+  ancestryData.forEach(person => { byName[person.name] = person; });
   for (let person in byName) {
     if (!byName.hasOwnProperty(person)) continue;
   	let motherName = byName[person].mother;
