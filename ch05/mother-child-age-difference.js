@@ -54,7 +54,7 @@ let ancestry = [
 ];
 
 const average = array => {
-	return +(array.reduce((a, b) => a + b) / array.length).toFixed(1);
+  return +(array.reduce((a, b) => a + b) / array.length).toFixed(1);
 };
 
 const motherAgeAtChildbirth = ancestryData => {
@@ -62,9 +62,9 @@ const motherAgeAtChildbirth = ancestryData => {
   ancestryData.forEach(person => { byName[person.name] = person; });
   for (let person in byName) {
     if (!byName.hasOwnProperty(person)) continue;
-  	let motherName = byName[person].mother;
-  	if (byName[motherName] === undefined) continue;
-  	ages.push(byName[person].born - byName[motherName].born);
+    let motherName = byName[person].mother;
+    if (byName[motherName] === undefined) continue;
+    ages.push(byName[person].born - byName[motherName].born);
   }
   return ages;
 };

@@ -61,7 +61,7 @@ let ancestry = [
 ];
 
 const average = array => {
-	return +(array.reduce((a, b) => a + b) / array.length).toFixed(1);
+  return +(array.reduce((a, b) => a + b) / array.length).toFixed(1);
 };
 
 const getCentury = person => Math.ceil(person.died / 100);

@@ -14,20 +14,20 @@ vector—that is, the distance of the point (x, y) from the origin (0, 0).
 */
 
 function Vector(x, y) {
-	this.x = Number(x);
-	this.y = Number(y);
+  this.x = Number(x);
+  this.y = Number(y);
 }
 
 Vector.prototype.plus = function(vectorObj) {
-	return new Vector(this.x + vectorObj.x, this.y + vectorObj.y);
+  return new Vector(this.x + vectorObj.x, this.y + vectorObj.y);
 };
 
 Vector.prototype.minus = function(vectorObj) {
-	return new Vector(this.x - vectorObj.x, this.y - vectorObj.y);
+  return new Vector(this.x - vectorObj.x, this.y - vectorObj.y);
 };
 
 Object.defineProperty(Vector.prototype, 'length', {
-	get: function() { return Math.sqrt((this.x * this.x) + (this.y * this.y)); }
+  get: function() { return Math.sqrt((this.x * this.x) + (this.y * this.y)); }
 });
 
 console.log(new Vector(1, 2).plus(new Vector(2, 3))); // Vector{x: 3, y: 5}

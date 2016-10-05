@@ -18,10 +18,10 @@ its constructor) instead.
 */
 
 const logFive = seqObj => {
-	for (let i = 0; i < 5; i++) {
-		if (!seqObj.next()) return;
-		console.log(seqObj.current());
-	}
+  for (let i = 0; i < 5; i++) {
+    if (!seqObj.next()) return;
+    console.log(seqObj.current());
+  }
 };
 
 function ArraySeq(arr) {
@@ -29,26 +29,26 @@ function ArraySeq(arr) {
   this.count = -1;
 }
 ArraySeq.prototype.next = function() {
-	if (this.count >= this.arr.length - 1) return false;
-	this.count++;
-	return true;
+  if (this.count >= this.arr.length - 1) return false;
+  this.count++;
+  return true;
 };
 ArraySeq.prototype.current = function() {
-	return this.count >= 0 ? this.arr[this.count] : undefined;
+  return this.count >= 0 ? this.arr[this.count] : undefined;
 };
 
 function RangeSeq(from, to) {
-	this.from = from;
-	this.start = from - 1;
-	this.to = to;
+  this.from = from;
+  this.start = from - 1;
+  this.to = to;
 }
 RangeSeq.prototype.next = function() {
-	if (this.start >= this.to) return false;
-	this.start++;
-	return true;
+  if (this.start >= this.to) return false;
+  this.start++;
+  return true;
 };
 RangeSeq.prototype.current = function() {
-	return this.start >= this.from ? this.start : undefined;
+  return this.start >= this.from ? this.start : undefined;
 };
 
 logFive(new ArraySeq([1, 2]));
